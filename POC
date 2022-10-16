@@ -1,0 +1,26 @@
+# Exploit Title: Simple Cold Storage Management System v1.0 - Stored XSS in "Settings" 
+# Exploit Author: Lakshaya Bawa
+# Vendor Name: oretnom23 
+# Vendor Homepage: https://www.sourcecodester.com/php/15088/simple-cold-storage-management-system-using-phpoop-source-code.html
+# Software Link: https://www.sourcecodester.com/php/15088/simple-cold-storage-management-system-using-phpoop-source-code.html
+# Version: v1.0
+# Tested on: Kali Linux, Apache
+
+
+Description: A multiple stored XSS in Simple Cold
+A multiple stored XSS in Simple Cold Storage Management System v1.0 allows an attacker to input arbitrary javascript  code into those vulnerable parameters
+
+Vulnerable Parameters:
+System Name
+System Short Name
+Payload:
+<script>alert(1)</script>
+
+Steps:
+1) Login into admin account
+2) Now go to "http://localhost/csms/admin/?page=system_info".
+3) Now in Parameters "System Name"  and "System Short Name" put your payload
+
+Payload: <script>alert(1)</script>
+
+4) Now update the settings and our payload will be executed.
